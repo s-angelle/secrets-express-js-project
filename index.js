@@ -10,7 +10,6 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const app = express();
 const port = 3000;
-const password = 'ILoveProgramming';
 
 // Middleware
 app.use(bodyParser.urlencoded({ extended: true}))
@@ -22,6 +21,8 @@ app.get("/", (req, res) => {
 })
 
 app.post('/check', (req, res) => {
+
+    const password = 'ILoveProgramming';
 
     if (req.body.password === password) {
         res.sendFile(__dirname + "/public/secret.html");
